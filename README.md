@@ -18,10 +18,20 @@
 
 *   Abstract Factory Pattern
 
-    **使用场景:** 不确定有多少产品，以及产品类
+    **使用场景:** 不确定有多少产品，以及产品类（不同的产品族）
 
     **元素:** 抽象工厂(AbstractFactory)，具体工厂(ShapeFactory,ColorFactory)，抽象产品(Shape,Color)，具体产
     品(Circle,...,Red,...)
+
+    **pros:** 具有工厂模式的优点，以及可以在类(FactoryProducer)内部中对产品族进行约束
+
+    **cons:** 当增加新的产品族时，对FactoryProduce需要增加逻辑判断，当增加新的产品时，对工厂类增加逻辑判断
+
+*   Singleton Pattern
+
+    **使用场景:** 
+
+    **元素:** 
 
     **pros:** 
 
