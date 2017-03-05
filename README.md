@@ -49,13 +49,15 @@
 
 *   Prototype Pattern
 
-    **使用场景:** 
+    **使用场景:** 需要重复创建相似对象(对象创建过程比较复杂)，使用原型模式，以提高性能
 
-    **要点:** 
+    **要点:** Prototype类(Shape)实现Cloneable接口，并重写clone()函数，返回对象的一个拷贝（Prototype类需要将clone方法的作用域修改为public类型）；使用原型模式创建对象时不需要调用构造函数，调用Object类的clone()方法，直接拷贝内存中的数据块；浅拷贝(只拷贝对象中的基本数据类型属性，数组，容器等类型的属性不拷贝)&深拷贝(拷贝对象中的基本数据类型属性以及数组等数据类型属性)
 
-    **pros:** 
+    **pros:** 使用Object类的clone()方法，返回对象的一个拷贝，从而提升性能；简化对象的创建，类似于复制粘贴
 
-    **cons:** 
+*   Adapter Pattern
+
+    **Continue......** 
 
 ### Structural Patterns
 ***
