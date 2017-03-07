@@ -55,11 +55,26 @@
 
     **pros:** 使用Object类的clone()方法，返回对象的一个拷贝，从而提升性能；简化对象的创建，类似于复制粘贴
 
-*   Adapter Pattern
-
-    **Continue......** 
 
 ### Structural Patterns
 ***
+*   Adapter Pattern
+
+    **使用场景:** 系统需要使用现有的类，但现有的类不符合系统的接口(基本使用场景)；两个实现相似功能的类，但提供不同的接口，使用适配器模式以提供统一的调用，并将其功能组合起来(代码场景);
+
+    **元素:** 目标接口(play(audioType,fileName))，已存在类(Mp4Player,VlcPlayer，AudioPlayer)，适配器(MediaAdapter)
+
+    **要点:** 新系统的客户需要使用一个特定的接口，原系统已存在的类无法提供该接口，因此增加适配器类来提供目标接口
+
+    **pros:** 不修改原有系统；对已有类复用
+
+    **代码注解:** 这个代码示例中，是对适配器模式的具体应用，已存在的Mp4Player与VlcPlayer分别能够播放mp4文件与vlc文件，AudioPlayer能够播放mp3文件，客户端需要一个play(audioType,filename)接口，来播放各种类型的文件。因此需要增加一个MediaAdapter来对Mp4Player与VlcPlayer进行适配,由于Mp4Player与VlcPlayer都实现了AdvancedMediaPlayer接口，因此只需要提供一个适配器类就可以对所有实现AdvancedMediaPlayer接口的类进行适配，之后在AudioPlayer类中添加MediaAdapter成员，并且为客户提供play(audioType,fileName)接口
+
+    **优化:** 本例中的架构可以转化为工厂模式，将MediaPlayer视为抽象产品，Mp4Player、VlcPlayer、Mp3Player作为工厂中的具体产品，增加一个具体工厂，根据audioType来生成具体的产品，从而满足需求，不过这应该是在系统设计时就决定的架构，当已存在原系统的情况下，适配器模式是最佳的选择，不过这也证明了在不同的时期，可以使用不同的设计模式来完成特定的需求
+
+*   Bridge Pattern
+
+    **Continue...** 
+
 ### Behavioral Patterns
 ***
