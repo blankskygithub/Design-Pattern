@@ -74,7 +74,15 @@
 
 *   Bridge Pattern
 
-    **Continue...** 
+    **使用场景:** 一个对象有多个维度方向上的变化，将这些变化因素抽象，使这个对象更好地依赖于抽象，而不是依赖于具体的因素
+
+    **要素:** 抽象化角色(Circle),具体化角色(RedCircle,BlueCircle)
+
+    **pros:** 对用户而言，只是执行的抽象角色(Circle)的方法(draw()),但他的实现细节是通过调用具体对象(RedCircle,BlueCircle)的方法,因此具体实现对用户透明；将不同的维度分离，当一个维度改变时，对原系统不造成影响，可扩展性高；
+
+    **代码注解:** 本例中的变化维度是Shape的种类与颜色，即不同的颜色执行不同的draw()方法，传统方法是使用继承来得到具体的角色(RedCircle,BlueCircle),但是当系统扩展(两个维度同时增加)时，类的数量会很快膨胀，因此使用Bridge Pattern在抽象层将继承关系转化为聚合关系，实现Shape与Color动态耦合
+
+    **例子:** [桥接模式应用](http://blog.csdn.net/sells2012/article/details/8242712) 在Java中，使用桥接模式实现平台的无关性
 
 ### Behavioral Patterns
 ***
