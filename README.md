@@ -94,7 +94,15 @@
 
 *   Composite Pattern
 
-    **Continue....**
+    **使用场景:** 希望忽略单个对象和组合对象的区别，统一使用组合结构中的所有对象（封装变化的思想）
+
+    **元素:** Component抽象对象，提供接口；Leaf组合的叶子对象，没有后继，定义组成原始对象的行为(Display())；Composite非叶子对象，实现Component中的孩子操作行为(Add(),Remove());
+
+    **要点:** 将对象组合成树形结构以表示‘部分-整体’的层次关系（树状结构）。组合模式使得用户对单个对象和组合对象使用具有一           致性;
+    
+              透明方式:在Component中声明所有用来管理子对象的方法，如Add()方法，Remove()方法及GetChild()方法，所有实现Component接口的子类都具备这些方法，这使得Component和子类具备一致的行为接口，使得对客户端无需区别树叶和树枝对象；
+    
+              安全模式：在透明模式基础上把Component中声明所有用来管理子对象的方法移到Composite中，在Composite实现子对象的管理方法，那么Leaf就没有子对象管理方法，这使得Composite和Leaf的行为接口不一致，所以客户端在调用时要知道树叶和树枝对象存在
 
 ### Behavioral Patterns
 ***
