@@ -104,5 +104,18 @@
     
               安全模式：在透明模式基础上把Component中声明所有用来管理子对象的方法移到Composite中，在Composite实现子对象的管理方法，那么Leaf就没有子对象管理方法，这使得Composite和Leaf的行为接口不一致，所以客户端在调用时要知道树叶和树枝对象存在
 
+*   Decorator Pattern
+
+    **使用场景:** 从外部为对象动态的添加功能，而不是直接修改原有类的方法与属性
+
+    **元素:** 组件对象接口(Shape)；具体组件(Circle,Rectangle,待装饰对象)；装饰器父类(ShapeDecorator，派生出多个装饰器)；装饰器(RedShapeDecorator)；
+    *ps:装饰器实现组件对象接口，即装饰器A对象可以装饰装饰器B对象*
+
+    **pros:** 基于对象组合的方式为对象添加功能，不修改原有类结构；与静态继承相比，装饰器模式更灵活，减少类的数量，降低系统复杂度；
+
+    **要点:** 装饰器模式中装饰器(*Decorator)与具体对象(Circle,Rectangle)实现了相同的接口(Shape);装饰器中含有待装饰对象成员(Shape decoratedShape);具体装饰器在装饰对象时是基于对象组合的方式;
+
+    **例子:** [Java IO中装饰器模式的使用](https://segmentfault.com/a/1190000004255439)
+
 ### Behavioral Patterns
 ***
